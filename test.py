@@ -3,6 +3,7 @@
 import sys
 import unittest
 
+
 class MyTest(unittest.TestCase):
 
     def test_upper(self):
@@ -19,6 +20,7 @@ class MyTest(unittest.TestCase):
     def test_failing(self):
         """A test that fails"""
         self.assertEqual(True, False)
+
 
 if __name__ == '__main__':
     unittest.main()
