@@ -1,5 +1,17 @@
 """
-This file describes a graph object
+This file describes a graph that handles generating vertices and edges and printing them
+
+Date:
+    September 14, 2019
+
+Course:
+    ECE 650 Assignment #1
+
+Author:
+    name: Vineel Nagisetty
+    student #: 20270395
+    contact: vineel.nagisetty@uwaterloo.ca
+
 """
 
 from check_intersection import is_intersecting_once

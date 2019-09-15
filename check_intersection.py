@@ -1,7 +1,18 @@
 """
 This file helps check for intersections. Algorithm used from http://www.cs.swan.ac.uk/~cssimon/line_intersection.html
 but implementation is my own. It is a fascinating read and Simon Walton derives the equation and explains why it
-works way better than I can.  For more information check the page
+works way better than I can.  For more information check the page linked
+
+Date:
+    September 14, 2019
+
+Course:
+    ECE 650 Assignment #1
+
+Author:
+    name: Vineel Nagisetty
+    student #: 20270395
+    contact: vineel.nagisetty@uwaterloo.ca
 """
 
 

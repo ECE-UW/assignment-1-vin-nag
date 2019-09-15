@@ -1,5 +1,17 @@
 """
-This file describes a streets database object
+This file describes a streets database object that adds, changes and removes streets
+
+Date:
+    September 14, 2019
+
+Course:
+    ECE 650 Assignment #1
+
+Author:
+    name: Vineel Nagisetty
+    student #: 20270395
+    contact: vineel.nagisetty@uwaterloo.ca
+
 """
 
 from graph import Graph

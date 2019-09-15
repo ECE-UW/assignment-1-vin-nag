@@ -1,4 +1,4 @@
-## A simple unit test example. Replace by your own tests
+# TODO: Convert my input files to unit tests
 
 import sys
 import unittest

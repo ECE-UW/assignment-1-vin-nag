@@ -2,7 +2,7 @@
 This file is the main function that handles CLI input. It solves the problem described in Assignment 1
 
 Date:
-    September 11, 2019
+    September 14, 2019
 
 Course:
     ECE 650 Assignment #1
@@ -10,7 +10,7 @@ Course:
 Author:
     name: Vineel Nagisetty
     student #: 20270395
-    contact: vnagiset@uwaterloo.ca
+    contact: vineel.nagisetty@uwaterloo.ca
 """
 
 import sys
@@ -23,12 +23,13 @@ def main():
     The main function of our program
     :return: None
     """
-
-    street_db_instance = StreetDb()
+    verbose = False
+    street_db_instance = StreetDb(verbose=verbose)
 
     while True:
         line = sys.stdin.readline()
-        print 'read a line:', line
+        if verbose:
+            print 'read a line:', line
         if line == '':
             break
         try:
@@ -37,21 +38,25 @@ def main():
         except Exception as detail:
             print detail
             continue
-    print 'Finished reading input'
+    if verbose:
+        print 'Finished reading input'
     sys.exit(0)
 
 
 def main_from_file():
     """
     Function made to test inputs from file for testing efficiently
+    TODO: Update unit test so this is not needed.
     :return:
     """
-    street_db_instance = StreetDb()
+    verbose = False
+    street_db_instance = StreetDb(verbose=verbose)
     file_name = raw_input('enter file with commands: ')
 
     with open(file_name, 'r') as file_handler:
         for line in file_handler:
-            print '\n'+ line[:-1]
+            if verbose:
+                print '\n'+ line[:-1]
             try:
                 func, args = parse(line, street_db_instance)
                 func(*args)
@@ -61,4 +66,4 @@ def main_from_file():
 
 
 if __name__ == '__main__':
-    main_from_file()
+    main()

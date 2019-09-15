@@ -1,5 +1,16 @@
 """
 This file is intended to help parse user commands, throw necessary errors and return function and arguments
+
+Date:
+    September 14, 2019
+
+Course:
+    ECE 650 Assignment #1
+
+Author:
+    name: Vineel Nagisetty
+    student #: 20270395
+    contact: vineel.nagisetty@uwaterloo.ca
 """
 
 import re
