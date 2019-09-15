@@ -43,25 +43,27 @@ def main():
     sys.exit(0)
 
 
-def main_from_file():
-    """
-    Function made to test inputs from file for testing efficiently
-    TODO: Update unit test so this is not needed.
-    :return:
-    """
-    verbose = False
-    street_db_instance = StreetDb(verbose=verbose)
-    file_name = raw_input('enter file with commands: ')
+class TestWrapper():
 
-    with open(file_name, 'r') as file_handler:
-        for line in file_handler:
-            if verbose:
-                print '\n'+ line[:-1]
+    def __init__(self):
+        self.commands = ""
+        self.output = ""
+        pass
+
+    def run(self, commands):
+        """
+        Function made to test inputs from file for testing efficiently
+        :return:
+        """
+        verbose = False
+        street_db_instance = StreetDb(verbose=verbose, test=True)
+
+        for line in commands:
             try:
                 func, args = parse(line, street_db_instance)
-                func(*args)
+                self.output += func(*args)
             except Exception as detail:
-                print detail
+                self.output += '\n' + str(detail)
                 continue
 
 

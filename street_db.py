@@ -21,13 +21,14 @@ class StreetDb:
 
     """A Graph Class"""
 
-    def __init__(self, verbose=False):
+    def __init__(self, verbose=False, test=False):
         """
         Standard init method
         :param verbose: (bool) whether to display steps for debugging
         """
         self.dictionary = {}
         self.verbose = verbose
+        self.test = test
         return
 
     def add(self, name, coordinates_list):
@@ -46,6 +47,7 @@ class StreetDb:
         self.dictionary[name] = coordinates_list
         if self.verbose:
             print 'added'
+        return ''
 
     def change(self, name, coordinates_list):
         """
@@ -63,7 +65,7 @@ class StreetDb:
         self.dictionary[name] = coordinates_list
         if self.verbose:
             print 'changed'
-        return
+        return ''
 
     def remove(self, name):
         """
@@ -80,7 +82,7 @@ class StreetDb:
         del self.dictionary[name]
         if self.verbose:
             print 'removed'
-        return
+        return ''
 
     def generate_graph(self):
         """
@@ -92,10 +94,12 @@ class StreetDb:
 
         graph_instance = Graph(streets_list=[x for x in self.dictionary.values()], verbose=self.verbose)
         graph_instance.generate_and_simplify()
-        print(graph_instance)
+
+        if not self.test:
+            print(graph_instance)
 
         if self.verbose:
             print(self.dictionary)
 
-        return
+        return graph_instance.__repr__()
 

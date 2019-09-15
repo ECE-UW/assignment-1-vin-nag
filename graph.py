@@ -124,7 +124,7 @@ class Graph:
         """
         # Vertices
         two_spaces = '  '
-        output = 'V = {\n'
+        output = '\nV = {\n'
         for key in self.vertices.keys():
             output += two_spaces + str(key) + ': ' + str(self.vertices[key]) + '\n'
         output += '}\n'
