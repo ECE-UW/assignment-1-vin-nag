@@ -113,6 +113,8 @@ class Graph:
             vertices = sorted(component)
             for idx in range(len(vertices) - 1):
                 key_a, key_b = self.lookup[tuple(vertices[idx])], self.lookup[tuple(vertices[idx + 1])]
+                if key_a == key_b:
+                    continue
                 edge = tuple([key_a, key_b])
                 if edge not in self.edges:
                     self.edges.append(edge)
