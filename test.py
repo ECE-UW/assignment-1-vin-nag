@@ -39,7 +39,7 @@ class MyTest(unittest.TestCase):
                 expected_output = output_file.read()
 
         self.test_instance.run(commands)
-        self.assertEqual(self.test_instance.output, expected_output)
+        self.assertEqual(self.test_instance.output.strip(), expected_output.strip())
 
     def test_coordinates_list(self):
         """
@@ -53,8 +53,8 @@ class MyTest(unittest.TestCase):
         Test the example given in class
         :return:
         """
-        with open('input_example2.txt', 'r') as input_file:
-            with open('output_example2.txt', 'r') as output_file:
+        with open('input_example.txt', 'r') as input_file:
+            with open('output_example.txt', 'r') as output_file:
                 commands = input_file.readlines()
                 expected_output = output_file.read()
 
@@ -66,7 +66,13 @@ class MyTest(unittest.TestCase):
         Test new graph
         :return:
         """
-        pass
+        with open('input_example3.txt', 'r') as input_file:
+            with open('output_example3.txt', 'r') as output_file:
+                commands = input_file.readlines()
+                expected_output = output_file.read()
+
+        self.test_instance.run(commands)
+        self.assertEqual(self.test_instance.output, expected_output)
 
 
 if __name__ == '__main__':
