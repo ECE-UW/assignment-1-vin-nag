@@ -16,7 +16,7 @@ class MyTest(unittest.TestCase):
     def tearDown(self):
         """
         delete instance of test wrapper
-        :return: 
+        :return:
         """
         del self.test_instance
 
@@ -53,21 +53,13 @@ class MyTest(unittest.TestCase):
         Test the example given in class
         :return:
         """
-        with open('input_example.txt', 'r') as input_file:
-            with open('output_example.txt', 'r') as output_file:
+        with open('input_example2.txt', 'r') as input_file:
+            with open('output_example2.txt', 'r') as output_file:
                 commands = input_file.readlines()
                 expected_output = output_file.read()
 
         self.test_instance.run(commands)
         self.assertEqual(self.test_instance.output, expected_output)
-
-
-    def test_graph2(self):
-        """
-        Test new graph
-        :return:
-        """
-        pass
 
     def test_graph3(self):
         """

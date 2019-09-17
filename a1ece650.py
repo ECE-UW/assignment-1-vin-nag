@@ -27,7 +27,7 @@ def main():
     street_db_instance = StreetDb(verbose=verbose)
 
     while True:
-        line = sys.stdin.readline()
+        line = sys.stdin.readline().strip()
         if verbose:
             print 'read a line:', line
         if line == '':
@@ -38,8 +38,7 @@ def main():
         except Exception as detail:
             print detail
             continue
-    if verbose:
-        print 'Finished reading input'
+    print 'Finished reading input'
     sys.exit(0)
 
 
