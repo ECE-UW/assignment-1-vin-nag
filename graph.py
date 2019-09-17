@@ -74,19 +74,24 @@ class Graph:
         :param x: (1d array) point [x, y] representing cartesian coordinate of point x (intersecting point)
         :return: None
         """
+        if self.verbose:
+            print 'reached here with' + str([a, b, x])
 
         # check if a vertex already is part of a component
         found = False
         for component in self.connected_components:
             if a in component or b in component:
+                if self.verbose:
+                    print 'true for ' +str([a, b]) + ' in ' + str(component)
                 found = True
 
                 # add intersection point to the existing component, if its not already in the component
-                if x in component:
-                    return
-                else:
+                if a not in component:
+                    component.append(a)
+                if b not in component:
+                    component.append(b)
+                if x not in component:
                     component.append(x)
-
         # add all points to a new component
         if not found:
             self.connected_components.append([a, x, b])
