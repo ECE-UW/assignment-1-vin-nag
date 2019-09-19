@@ -19,7 +19,28 @@ from graph import Graph
 
 class StreetDb:
 
-    """A Graph Class"""
+    """
+    A Class that acts as a database for streets. It handles basic commands such as add, remove, change and generate
+    graphs
+
+    Attributes
+    ----------
+    verbose : bool
+        determine whether to print out intermediate steps for debugging (default False)
+    test : bool
+        determine whether unit tests are run (default False)
+
+    Methods
+    -------
+    add(name, coordinates_list):
+        add a street to the graph
+    change(name, coordinates_list):
+        change the coordinates of a street
+    remove(name):
+        remove a street from the map
+    generate_graph():
+        generate the graphs and edges of the map and prints it
+    """
 
     def __init__(self, verbose=False, test=False):
         """
@@ -95,8 +116,7 @@ class StreetDb:
         graph_instance = Graph(streets_list=[x for x in self.dictionary.values()], verbose=self.verbose)
         graph_instance.generate_and_simplify()
 
-        if not self.test:
-            print(graph_instance)
+        print graph_instance
 
         if self.verbose:
             print(self.dictionary)
