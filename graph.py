@@ -19,7 +19,23 @@ from check_intersection import is_intersecting_once
 
 class Graph:
 
-    """A Graph Class"""
+    """
+    A Class that acts as a database for streets. It handles basic commands such as add, remove, change and generate
+    graphs
+
+    Attributes
+    ----------
+    streets_list: 2d list
+        list representing coordinates for each street
+    verbose : bool
+        determine whether to print out intermediate steps for debugging (default False)
+
+    Methods
+    -------
+    generate_and_simplify():
+        generate graphs from the streets list
+    """
+
     def __init__(self, streets_list, verbose=False):
         """
         Standard init method

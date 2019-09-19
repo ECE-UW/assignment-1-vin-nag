@@ -1,4 +1,4 @@
-# TODO: Add more unit tests (co-ordinates list, functions, test other graphs)
+# TODO: Add more unit tests (error checks for co-ordinates list and function calls)
 
 import unittest
 from a1ece650 import TestWrapper
