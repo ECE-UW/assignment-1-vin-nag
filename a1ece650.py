@@ -1,5 +1,5 @@
 """
-This file is the main function that handles CLI input. It solves the problem described in Assignment 1
+This file is the main function that handles input. It solves the problem described in Assignment 1
 
 Date:
     September 14, 2019
