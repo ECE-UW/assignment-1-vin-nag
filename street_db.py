@@ -116,10 +116,8 @@ class StreetDb:
         graph_instance = Graph(streets_list=[x for x in self.dictionary.values()], verbose=self.verbose)
         graph_instance.generate_and_simplify()
 
-        print graph_instance
-
         if self.verbose:
-            print(self.dictionary)
+            print('dictionary =' + str(self.dictionary))
 
         return graph_instance.__repr__()
 

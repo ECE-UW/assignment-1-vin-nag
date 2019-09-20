@@ -147,7 +147,7 @@ class Graph:
         """
         # Vertices
         two_spaces = '  '
-        output = '\nV = {\n'
+        output = 'V = {\n'
         for key in self.vertices.keys():
             output += two_spaces + str(key) + ': ' + str(self.vertices[key]) + '\n'
         output += '}\n'
@@ -156,6 +156,6 @@ class Graph:
         output += 'E = {\n'
         for edge in self.edges:
             output += two_spaces + '<' + str(edge[0]) + ',' + str(edge[1]) + '>\n'
-        output += '}'
+        output += '}\n'
 
         return output

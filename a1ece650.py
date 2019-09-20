@@ -34,22 +34,22 @@ def main():
             break
         try:
             func, args = parse(line, street_db_instance)
-            func(*args)
+            sys.stdout.write(func(*args))
         except Exception as detail:
-            print detail
+            print >> sys.stderr, detail
             continue
     print 'Finished reading input'
     sys.exit(0)
 
 
-class TestWrapper():
+class TestWrapper:
 
     def __init__(self):
         self.commands = ""
         self.output = ""
         pass
 
-    def run(self, commands):
+    def run(self, commands, out=sys.stdout):
         """
         Function made to test inputs from file for testing efficiently
         :return:
@@ -60,9 +60,9 @@ class TestWrapper():
         for line in commands:
             try:
                 func, args = parse(line, street_db_instance)
-                self.output += func(*args)
+                out.write(func(*args))
             except Exception as detail:
-                self.output += '\n' + str(detail)
+                out.write('\n' + str(detail))
                 continue
 
 

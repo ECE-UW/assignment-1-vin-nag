@@ -1,5 +1,6 @@
 # TODO: Add more unit tests (error checks for co-ordinates list and function calls)
 
+import sys
 import unittest
 from a1ece650 import TestWrapper
 
@@ -30,8 +31,10 @@ class MyTest(unittest.TestCase):
                 commands = input_file.readlines()
                 expected_output = output_file.read()
 
-        self.test_instance.run(commands)
-        self.assertEqual(self.test_instance.output.strip(), expected_output.strip())
+        from StringIO import StringIO
+        out = StringIO()
+        self.test_instance.run(commands, out=out)
+        self.assertEqual(out.getvalue().strip(), expected_output.strip())
 
     def test_street_names(self):
         """
@@ -43,8 +46,10 @@ class MyTest(unittest.TestCase):
                 commands = input_file.readlines()
                 expected_output = output_file.read()
 
-        self.test_instance.run(commands)
-        self.assertEqual(self.test_instance.output.strip(), expected_output.strip())
+        from StringIO import StringIO
+        out = StringIO()
+        self.test_instance.run(commands, out=out)
+        self.assertEqual(out.getvalue().strip(), expected_output.strip())
 
     def test_coordinates_list(self):
         """
@@ -56,8 +61,10 @@ class MyTest(unittest.TestCase):
                 commands = input_file.readlines()
                 expected_output = output_file.read()
 
-        self.test_instance.run(commands)
-        self.assertEqual(self.test_instance.output.strip(), expected_output.strip())
+        from StringIO import StringIO
+        out = StringIO()
+        self.test_instance.run(commands, out=out)
+        self.assertEqual(out.getvalue().strip(), expected_output.strip())
 
     def test_example(self):
         """
@@ -69,8 +76,10 @@ class MyTest(unittest.TestCase):
                 commands = input_file.readlines()
                 expected_output = output_file.read()
 
-        self.test_instance.run(commands)
-        self.assertEqual(self.test_instance.output, expected_output)
+        from StringIO import StringIO
+        out = StringIO()
+        self.test_instance.run(commands, out=out)
+        self.assertEqual(out.getvalue().strip(), expected_output.strip())
 
     def test_graph3(self):
         """
@@ -82,8 +91,10 @@ class MyTest(unittest.TestCase):
                 commands = input_file.readlines()
                 expected_output = output_file.read()
 
-        self.test_instance.run(commands)
-        self.assertEqual(self.test_instance.output, expected_output)
+        from StringIO import StringIO
+        out = StringIO()
+        self.test_instance.run(commands, out=out)
+        self.assertEqual(out.getvalue().strip(), expected_output.strip())
 
 
 if __name__ == '__main__':
