@@ -25,14 +25,19 @@ class MyTest(unittest.TestCase):
         Test if error raised when wrong function given
         :return:
         """
-        pass
+        with open('input_functions.txt', 'r') as input_file:
+            with open('output_functions.txt', 'r') as output_file:
+                commands = input_file.readlines()
+                expected_output = output_file.read()
+
+        self.test_instance.run(commands)
+        self.assertEqual(self.test_instance.output.strip(), expected_output.strip())
 
     def test_street_names(self):
         """
         Test for street names regex
         :return:
         """
-
         with open('input_street_names.txt', 'r') as input_file:
             with open('output_street_names.txt', 'r') as output_file:
                 commands = input_file.readlines()
@@ -46,7 +51,13 @@ class MyTest(unittest.TestCase):
         Test for coordinates list regex
         :return:
         """
-        pass
+        with open('input_coordinates_list.txt', 'r') as input_file:
+            with open('output_coordinates_list.txt', 'r') as output_file:
+                commands = input_file.readlines()
+                expected_output = output_file.read()
+
+        self.test_instance.run(commands)
+        self.assertEqual(self.test_instance.output.strip(), expected_output.strip())
 
     def test_example(self):
         """
