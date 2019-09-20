@@ -83,7 +83,7 @@ def is_on_segment(a, b, x):
     """
     dist1 = get_distance(a, x) + get_distance(b, x)
     dist2 = get_distance(a, b)
-    return  dist1 == dist2
+    return dist1 == dist2
 
 
 def parallel_or_collinear(a, b, c, d):
@@ -138,6 +138,6 @@ def is_intersecting_once(a, b, c, d):
     if all(0 <= val <= 1 for val in [t1, t2]):
         x = a[0] + t1*(b[0]-a[0])
         y = a[1] + t1*(b[1]-a[1])
-        return True, [x, y]
+        return True, [round(x,2), round(y,2)]
     else:
         return False, [None, None]

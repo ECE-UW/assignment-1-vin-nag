@@ -34,7 +34,7 @@ def parse_name(name_input):
 def parse_coordinates(coordinates_input):
     """
     This function parses the coordinates list from the input
-    :param coordinates_input: (str) coorindates list part of the user input command
+    :param coordinates_input: (str) coordinates list part of the user input command
     :return: 2d-array of list of [x,y] coordinates
     """
 
