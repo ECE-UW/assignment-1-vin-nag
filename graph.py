@@ -154,8 +154,12 @@ class Graph:
 
         # Edges
         output += 'E = {\n'
-        for edge in self.edges:
-            output += two_spaces + '<' + str(edge[0]) + ',' + str(edge[1]) + '>\n'
+        for edge in range(len(self.edges)-1):
+            output += two_spaces + '<' + str(self.edges[edge][0]) + ',' + str(self.edges[edge][1]) + '>,\n'
+
+        if len(self.edges) > 0:
+            output += two_spaces + '<' + str(self.edges[-1][0]) + ',' + str(self.edges[-1][1]) + '>\n'
+
         output += '}\n'
 
         return output
