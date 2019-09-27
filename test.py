@@ -1,6 +1,5 @@
-# TODO: Add more unit tests (error checks for co-ordinates list and function calls)
+# Unit tests
 
-import sys
 import unittest
 from a1ece650 import TestWrapper
 
@@ -26,8 +25,8 @@ class MyTest(unittest.TestCase):
         Test if error raised when wrong function given
         :return:
         """
-        with open('input_functions.txt', 'r') as input_file:
-            with open('output_functions.txt', 'r') as output_file:
+        with open('test_data/input_files/input_functions.txt', 'r') as input_file:
+            with open('test_data/output_files/output_functions.txt', 'r') as output_file:
                 commands = input_file.readlines()
                 expected_output = output_file.read()
 
@@ -41,8 +40,8 @@ class MyTest(unittest.TestCase):
         Test for street names regex
         :return:
         """
-        with open('input_street_names.txt', 'r') as input_file:
-            with open('output_street_names.txt', 'r') as output_file:
+        with open('test_data/input_files/input_street_names.txt', 'r') as input_file:
+            with open('test_data/output_files/output_street_names.txt', 'r') as output_file:
                 commands = input_file.readlines()
                 expected_output = output_file.read()
 
@@ -56,8 +55,8 @@ class MyTest(unittest.TestCase):
         Test for coordinates list regex
         :return:
         """
-        with open('input_coordinates_list.txt', 'r') as input_file:
-            with open('output_coordinates_list.txt', 'r') as output_file:
+        with open('test_data/input_files/input_coordinates_list.txt', 'r') as input_file:
+            with open('test_data/output_files/output_coordinates_list.txt', 'r') as output_file:
                 commands = input_file.readlines()
                 expected_output = output_file.read()
 
@@ -71,8 +70,8 @@ class MyTest(unittest.TestCase):
         Test the example given in class
         :return:
         """
-        with open('input_example.txt', 'r') as input_file:
-            with open('output_example.txt', 'r') as output_file:
+        with open('test_data/input_files/input_example.txt', 'r') as input_file:
+            with open('test_data/output_files/output_example.txt', 'r') as output_file:
                 commands = input_file.readlines()
                 expected_output = output_file.read()
 
@@ -86,8 +85,8 @@ class MyTest(unittest.TestCase):
         Test new graph
         :return:
         """
-        with open('input_example3.txt', 'r') as input_file:
-            with open('output_example3.txt', 'r') as output_file:
+        with open('test_data/input_files/input_example3.txt', 'r') as input_file:
+            with open('test_data/output_files/output_example3.txt', 'r') as output_file:
                 commands = input_file.readlines()
                 expected_output = output_file.read()
 
