@@ -38,7 +38,8 @@ def main():
         except Exception as detail:
             print >> sys.stderr, detail
             continue
-    print 'Finished reading input'
+    if verbose:
+        print 'Finished reading input'
     sys.exit(0)
 
 
